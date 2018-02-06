@@ -1,0 +1,66 @@
+#game * {
+	padding: 0;
+	margin: 0;
+}
+
+#game body {
+	background-color: lavender;
+}
+
+#game #container {
+	width: 1200px;
+	height: 900px;
+	/*display: inline-block;*/
+	margin: 0 auto;
+	box-sizing: border-box;
+	border: 1px solid red;
+	background-color: #fff;
+}
+
+#game header {
+	border: 1px solid blue;
+	height: 20%;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+#game .header_img {
+	border: 1px solid red;
+	display: inline-block;
+	width: 29%;
+}
+
+#game header div:nth-of-type(2){
+	border: 1px solid red;
+	display: inline-block;
+	width: 69%;
+}
+
+#game .main_body {
+	height: 80%;
+}
+
+#game .main_body .stats {
+	border: 1px solid yellow;
+	display: inline-block;
+	width: 30%;
+	height: 100%;
+	vertical-align: top;
+	box-sizing: border-box;
+}
+
+#game #game-area {
+	width: 70%;
+	height: 100%;
+	border: 1px dashed red;
+	display: inline-block;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+#game .card {
+	width: 16%;
+	height: 33%;
+	border: 1px dashed green;
+	display: inline-block;
+}
