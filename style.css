@@ -63,4 +63,19 @@
 	height: 33%;
 	border: 1px dashed green;
 	display: inline-block;
+	position: relative;
+	vertical-align: top;
+}
+
+
+#game .card img {
+	width: 130px;
+	display: inline-block;
+	position: absolute;
+	top: 20px;
+	left: 2px;
+}
+
+#game .card .back {
+	z-index: 5;
 }
