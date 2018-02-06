@@ -67,7 +67,6 @@
 	vertical-align: top;
 }
 
-
 #game .card img {
 	width: 130px;
 	display: inline-block;
@@ -78,4 +77,8 @@
 
 #game .card .back {
 	z-index: 5;
+}
+
+#game .back.hide {
+	display: none;
 }
