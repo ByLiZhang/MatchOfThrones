@@ -8,8 +8,8 @@
 }
 
 #game #container {
-	width: 1200px;
-	height: 900px;
+	width: 90vw;
+	height: 100vh;
 	/*display: inline-block;*/
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -47,6 +47,7 @@
 	height: 100%;
 	vertical-align: top;
 	box-sizing: border-box;
+	font-size: 1.5em;
 }
 
 #game #game-area {
@@ -59,7 +60,7 @@
 }
 
 #game .card {
-	width: 16%;
+	width: 15%;
 	height: 33%;
 	border: 1px dashed green;
 	display: inline-block;
@@ -67,12 +68,13 @@
 	vertical-align: top;
 }
 
-#game .card img {
-	width: 130px;
+
+#game .card img{
+	width: 90%;
+	/*height: 60%;*/
 	display: inline-block;
 	position: absolute;
-	top: 20px;
-	left: 2px;
+	margin: auto;
 }
 
 #game .card .back {
