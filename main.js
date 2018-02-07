@@ -75,5 +75,5 @@ function reset() {
 }
 
 function displayWin() {
-	// body...
+	
 }
