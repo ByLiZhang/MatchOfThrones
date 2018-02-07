@@ -53,11 +53,18 @@ function compareCards(card1, card2) {
 
 function updateStats(score) {
 	if (score%9 === 0 && score !== 0){
-		$('#game .stats .games-played .value').text((score/9).toString());
-		updateAttempts(attempt_counter);
+		var gameWon = (score/9).toString();
+		$('#game .stats .games-played .value').text(gameWon);
+		updateAttempts(attempt_counter.toString());
+		updateAccuray((score/attempt_counter).toString());
+		alert('YOU WON!');
 	} 
 }
 
 function updateAttempts(num) {
-	$('#game .stats .attempts .value').text((num/2).toString());
+	$('#game .stats .attempts .value').text((num).toString());
+}
+
+function updateAccuray(string) {
+	$('#game .stats .accuracy .value').text(string);
 }
