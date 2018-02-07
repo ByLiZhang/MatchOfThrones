@@ -71,7 +71,6 @@
 
 #game .card img{
 	width: 90%;
-	/*height: 60%;*/
 	display: inline-block;
 	position: absolute;
 	margin: auto;
@@ -81,6 +80,6 @@
 	z-index: 5;
 }
 
-#game .back.hide {
+#game .card.hide > .back {
 	display: none;
 }

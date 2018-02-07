@@ -1,45 +1,39 @@
 $(document).ready(initializeApp);
 
 var first_card_clicked = null;
-var second_card_clicked = null;
+var match_counter = 0;
 
 function initializeApp() {
 	var card = $('#game .card');
-	$(card).on('click', '.back', hideBack);
+	$(card).on('click', handleClick);
 }
 
-function hideBack() {
-	$(this).addClass('hide');
-	var frontImg = $(this).prev().children();
-	var backImg = $(this);
-	var first_card_src = '';
-	var second_card_src = '';
-	console.log(frontImg);
+function handleClick() {
+	hideBack(this);
 	if (first_card_clicked === null) {
-		first_card_clicked = frontImg;
-		first_card_src = first_card_clicked.attr('src');
-		console.log(first_card_src);
+		first_card_clicked = this;
 	} else {
-		second_card_clicked = frontImg;
-		second_card_src = second_card_clicked.attr('src');
-		console.log(second_card_src);
-		if (first_card_src === second_card_src) {
-			return
-		} else {
-			console.log(second_card_clicked);
-			setTimeout(function(){
-				// first_card_clicked.removeClass('hide');
-				// second_card_clicked.removeClass('hide');
-				$('#game .card .back').removeClass('hide'); // not good
-			}, 1000);
-		}
-		first_card_clicked = null;
-		second_card_clicked = null;
+		var second_card_clicked = this;
+		compareCards(first_card_clicked, second_card_clicked);
 	}
-
-	
 }
 
-function getImageName() {
-	console.log(this);
+function hideBack(card) {
+	$(card).addClass('hide');
+}
+
+function compareCards(card1, card2) {
+	var cardName1 = $(card1).find('.front img').attr('src');
+	var cardName2 = $(card2).find('.front img').attr('src');
+	if (cardName1 === cardName2){
+		match_counter++;
+		updateScore(match_counter);
+	} else {
+		$(card1).removeClass('hide');
+		$(card2).removeClass('hide');
+	}
+}
+
+function updateScore(argument) {
+	// body...
 }
