@@ -7,6 +7,7 @@ var attempt_counter = 0;
 function initializeApp() {
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
+	$('#game .stats .reset').on('click', reset);
 }
 
 function handleClick() {
@@ -56,8 +57,8 @@ function updateStats(score) {
 		var gameWon = (score/9).toString();
 		$('#game .stats .games-played .value').text(gameWon);
 		updateAttempts(attempt_counter.toString());
-		updateAccuray((score/attempt_counter).toString());
-		alert('YOU WON!');
+		updateAccuray((((score/attempt_counter).toFixed(2))*100).toString());
+		displayWin();
 	} 
 }
 
@@ -66,5 +67,13 @@ function updateAttempts(num) {
 }
 
 function updateAccuray(string) {
-	$('#game .stats .accuracy .value').text(string);
+	$('#game .stats .accuracy .value').text(string + '%');
+}
+
+function reset() {
+	$('#game .card').removeClass('hide');
+}
+
+function displayWin() {
+	// body...
 }
