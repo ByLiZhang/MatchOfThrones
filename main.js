@@ -13,25 +13,29 @@ function initializeApp() {
 function handleClick() {
 	if (first_card_clicked === null) {
 		first_card_clicked = this;
-		// console.log('1st clicked', first_card_clicked);
-		hideBack(this);
+		console.log('1st clicked', first_card_clicked);
+		flipBack(this);
 	} else {
 		if(!$(this).hasClass('hide')){
 			var second_card_clicked = this;
-			// console.log('2nd clicked',second_card_clicked);
-			hideBack(this);
+			console.log('2nd clicked',second_card_clicked);
+			flipBack(this);
 			attempt_counter++;
 			compareCards(first_card_clicked, second_card_clicked);
 		}	
 	}
 }
 
-function hideBack(card) {
-	$(card).addClass('hide');
+// function hideBack(card) {
+// 	$(card).addClass('hide');
+// }
+
+function flipBack(card) {
+	$(card).addClass('flipper');
 }
 
 function showBack(card) {
-	$(card).removeClass('hide');
+	$(card).removeClass('flipper');
 }
 
 function compareCards(card1, card2) {
