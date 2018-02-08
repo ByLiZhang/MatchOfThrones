@@ -79,5 +79,5 @@ function reset() {
 }
 
 function displayWin() {
-	
+	$('.win_message.hide').removeClass('hide');
 }
