@@ -8,7 +8,7 @@
 	background-color: lavender;
 	font-family: GoT;
 	font-size: 0;
-	background-image: url(img/faces.png);
+	/*background-image: url();*/
 }
 
 @font-face {
@@ -17,33 +17,36 @@
 }
 
 #game #container {
-	width: 80vw;
-	height: 80vh;
+	width: 100vw;
+	height: 100vh;
+	min-width: 1200px;
+	min-height: 800px;
 	margin: 0 auto;
 	box-sizing: border-box;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	background-color: #000;
 }
 
 #game header {
-	border: 1px solid blue;
+	/*border: 1px solid blue;*/
 	height: 20%;
 	text-align: center;
 	box-sizing: border-box;
 	font-size: 1rem;
 	color: lightgrey;
+	position: relative;
 }
 
 #game .header_text {
 	height: 100%;
 	vertical-align: top;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	display: inline-block;
 	width: 69%;
 }
 
 #game .header_img {
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 	display: inline-block;
 	width: 29%;
 	height: 100%;
@@ -55,16 +58,17 @@
 }
 
 #game .header_text p {
-	height: 30%;
-	box-sizing: border-box;
+	height: 50%;
+	/*box-sizing: border-box;*/
 	letter-spacing: 0.12rem;
-	padding: 3.5% 0;
+	/*vertical-align: middle;	*/
+	padding-top: 2vh;
 }
 
 #game .header_text .phrase {
 	font-size: 0.8rem;
 	/*line-height: 5%;*/
-	margin-bottom: 1rem;
+	/*margin-bottom: 3vh;*/
 }
 
 #game .header_text a {
@@ -82,13 +86,15 @@
 }
 
 #game .main_body .stats {
-	border: 1px solid yellow;
+	/*border: 1px solid yellow;*/
 	display: inline-block;
 	width: 30%;
 	height: 100%;
 	vertical-align: top;
 	box-sizing: border-box;
 	color: lightgrey;
+	padding-top: 5%;
+	padding-left: 2%;
 }
 
 #game .main_body .stats .label {
@@ -97,6 +103,7 @@
 	padding-left: 3rem;
 	padding-top: 1rem;
 	line-height: 1.8rem;
+	margin-top: 5%;
 }
 
 #game .main_body .stats .value {
@@ -104,7 +111,7 @@
 	display: inline-block;
 	width: 40%;
 	text-align: center;
-	font-size: 0.8rem;
+	font-size: 1rem;
 }
 
 #game .stats .reset{
@@ -124,11 +131,17 @@
 
 #game .stats div.crown {
 	width: 60%;
-	margin: 8% auto;
+	height: 50%;
+	margin: 0 auto;
+	box-sizing: border-box;
+	position: relative;
 }
 
 #game .stats div.crown img {
 	width: 100%;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 /*#game .main_body .stats span.value:nth-of-type(2)::before {
 	content: '';
@@ -139,7 +152,7 @@
 #game #game-area {
 	width: 70%;
 	height: 100%;
-	border: 1px dashed red;
+	/*border: 1px dashed red;*/
 	position: relative;
 	display: inline-block;
 	box-sizing: border-box;
@@ -151,7 +164,7 @@
 #game .card {
 	width: 16.66%;
 	height: 33.33%;
-	border: 1px dashed green;
+	/*border: 1px dashed green;*/
 	display: inline-block;
 	position: relative;
 	box-sizing: border-box;
@@ -175,10 +188,12 @@
 	height: 100%;
 	width: 100%;
 	box-sizing: border-box;
+
 }
 
 #game .card img {
 	width: 100%;
+	max-width: 130px;
 	height: 150% * width;
 	display: inline-block;
 	position: absolute;
@@ -206,7 +221,7 @@
 	display: none;
 }*/
 
-.win_message{
+#game .win_message{
 	position: absolute;
 	width: 100%;
 	height: 30%;
@@ -214,22 +229,22 @@
 	/*background-color: yellow;*/
 	letter-spacing: 0.12rem;
 	text-align: center;
-	font-size: 10rem;
 	font-weight: bolder;
 	z-index: 100;
 }
 
-.win_message > span {
+#game .win_message > span {
 	display: inline-block;
 	position: absolute;
 	color: red;
 	width: 90%;
 	margin: 0 auto;
-	top:50%;
+	font-size: 10rem;
+	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.win_message.hide {
+#game .win_message.hide {
 	display: none;
 }
