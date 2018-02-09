@@ -90,20 +90,30 @@
 #game .main_body .stats .label {
 	font-size: 0.8rem;
 	letter-spacing: 0.12rem;
-	padding-left: 2rem;
+	padding-left: 1rem;
 }
 
 #game .main_body .stats .value {
 	font-style: italic;
 	display: inline-block;
 	width: 40%;
-	text-align: right;
+	text-align: center;
 }
 
-#game .main_body .stats span.value:nth-of-type(2):before {
-	content: ' ';
-	font-size: 1rem;
+#game .stats .reset{
+	margin-left: 3rem;
+	font-family: Got;
+	font-size: 0.8rem;
+	width: 10rem;
+	height: 1.5rem;
+	letter-spacing: 0.1rem;
 }
+
+/*#game .main_body .stats span.value:nth-of-type(2)::before {
+	content: '';
+	width: 3rem;
+	display: inline-block;
+}*/
 
 #game #game-area {
 	width: 70%;
@@ -112,12 +122,14 @@
 	display: inline-block;
 	box-sizing: border-box;
 	margin: 0 auto;
+	font-size: 0;
 	perspective: 1000px; 	 /*adding flip perspective*/
 }
 
 #game .card {
 	width: 16.66%;
 	height: 33%;
+
 	border: 1px dashed green;
 	display: inline-block;
 	position: relative;
@@ -148,7 +160,8 @@
 	height: auto;
 	display: inline-block;
 	position: absolute;
-	margin: auto;
+	box-sizing: border-box;
+	padding: 5%;
 }
 
 /*/* front pane, placed above back */
@@ -162,9 +175,9 @@
 	transform: rotateY(180deg);
 }
 
-#game .card.hide > .back {
+/*#game .card.hide > .back {
 	display: none;
-}
+}*/
 
 .win_message{
 	position: absolute;

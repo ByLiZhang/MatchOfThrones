@@ -3,6 +3,7 @@ $(document).ready(initializeApp);
 var first_card_clicked = null;
 var match_counter = 0;
 var attempt_counter = 0;
+var anotherClickAllowed = true;
 
 function initializeApp() {
 	var card = $('#game .card');
@@ -11,24 +12,19 @@ function initializeApp() {
 }
 
 function handleClick() {
-	if (first_card_clicked === null) {
+	if (first_card_clicked === null && anotherClickAllowed) {
 		first_card_clicked = this;
-		console.log('1st clicked', first_card_clicked);
 		flipBack(this);
 	} else {
-		if(!$(this).hasClass('hide')){
+		if(!$(this).hasClass('flipper') && anotherClickAllowed ){
+			anotherClickAllowed= false;
 			var second_card_clicked = this;
-			console.log('2nd clicked',second_card_clicked);
 			flipBack(this);
 			attempt_counter++;
 			compareCards(first_card_clicked, second_card_clicked);
-		}	
+		}
 	}
 }
-
-// function hideBack(card) {
-// 	$(card).addClass('hide');
-// }
 
 function flipBack(card) {
 	$(card).addClass('flipper');
@@ -41,19 +37,21 @@ function showBack(card) {
 function compareCards(card1, card2) {
 	var cardName1 = $(card1).find('.front img').attr('src');
 	var cardName2 = $(card2).find('.front img').attr('src');
-	// console.log(cardName1);
-	// console.log(cardName2);
 	if (cardName1 === cardName2){
 		match_counter++;
-		// console.log(match_counter);
 		updateStats(match_counter);
+		anotherClickAllowed = true;
+		first_card_clicked = null;  //no need to check if second_card_clicked = null;
 	} else {
 		setTimeout(function(){
 			showBack(card1);
 			showBack(card2);
+			setTimeout(function(){
+			anotherClickAllowed = true;
+			first_card_clicked = null;  //no need to check if second_card_clicked = null;
+			}, 1050);
 		}, 1500);
 	}
-	first_card_clicked = null;  //no need to check if second_card_clicked = null;
 }
 
 function updateStats(score) {
@@ -75,9 +73,12 @@ function updateAccuray(string) {
 }
 
 function reset() {
-	$('#game .card').removeClass('hide');
+	$('#game .card').removeClass('flipper');
+	$('.win_message').addClass('hide');
+	anotherClickAllowed = true;
 }
 
 function displayWin() {
 	$('.win_message.hide').removeClass('hide');
+	anotherClickAllowed = false;
 }
