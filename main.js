@@ -79,6 +79,8 @@ function reset() {
 }
 
 function displayWin() {
-	$('.win_message.hide').removeClass('hide');
+	setTimeout(function(){
+		$('.win_message.hide').removeClass('hide');
+	}, 1050);
 	anotherClickAllowed = false;
 }

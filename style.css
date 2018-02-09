@@ -57,16 +57,18 @@
 	height: 30%;
 	box-sizing: border-box;
 	letter-spacing: 0.12rem;
-	padding: 5% 0;
+	padding: 3.5% 0;
 }
 
 #game .header_text .phrase {
 	font-size: 0.8rem;
-	line-height: 5%;
+	/*line-height: 5%;*/
+	margin-bottom: 1rem;
 }
 
 #game .header_text a {
 	text-decoration: none;
+	font-weight: bold;
 }
 
 #game .header_text a:hover {
@@ -91,6 +93,7 @@
 	font-size: 0.8rem;
 	letter-spacing: 0.12rem;
 	padding-left: 1rem;
+	padding-top: 1rem;
 }
 
 #game .main_body .stats .value {
@@ -107,6 +110,11 @@
 	width: 10rem;
 	height: 1.5rem;
 	letter-spacing: 0.1rem;
+	margin-top: 2rem;
+}
+
+#game .stats .reset:hover{
+	text-shadow: 2px 3px 2px grey;
 }
 
 /*#game .main_body .stats span.value:nth-of-type(2)::before {
@@ -129,14 +137,13 @@
 #game .card {
 	width: 16.66%;
 	height: 33%;
-
 	border: 1px dashed green;
 	display: inline-block;
 	position: relative;
 	box-sizing: border-box;
 	vertical-align: top;
   	transform-style: preserve-3d;
-  	transform: rotateY(0deg);
+  	transform: rotateY(0deg);  /*set initial card position for rotation*/
   	transition-duration: 1s;
 }
 
@@ -145,9 +152,8 @@
 }
 
 
-/*hide back of pane during swap*/
 #game .front, #game .back {
-	backface-visibility: hidden;
+	backface-visibility: hidden; /*hide back of pane during swap*/
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -185,6 +191,7 @@
 	height: 30%;
 	top:33%;
 	background-color: yellow;
+	letter-spacing: 0.12rem;
 	text-align: center;
 	font-size: 5rem;
 	z-index: 100;
