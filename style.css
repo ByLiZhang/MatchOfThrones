@@ -1,11 +1,13 @@
 #game * {
 	padding: 0;
 	margin: 0;
+	font-size: 3vmin;
 }
 
 #game body {
 	background-color: lavender;
 	font-family: GoT;
+	font-size: 0;
 }
 
 @font-face {
@@ -14,13 +16,12 @@
 }
 
 #game #container {
-	width: 90vw;
-	height: 100vh;
-	/*display: inline-block;*/
+	width: 70vw;
+	height: 80vh;
 	margin: 0 auto;
 	box-sizing: border-box;
 	border: 1px solid red;
-	background-color: #fff;
+	background-color: #000;
 }
 
 #game header {
@@ -28,18 +29,48 @@
 	height: 20%;
 	text-align: center;
 	box-sizing: border-box;
+	font-size: 1rem;
+	color: lightgrey;
+}
+
+#game .header_text {
+	height: 100%;
+	vertical-align: top;
+	border: 1px solid red;
+	display: inline-block;
+	width: 69%;
 }
 
 #game .header_img {
 	border: 1px solid red;
 	display: inline-block;
 	width: 29%;
+	height: 100%;
 }
 
-#game header div:nth-of-type(2){
-	border: 1px solid red;
-	display: inline-block;
-	width: 69%;
+#game .header_img img {
+	width: 90%;
+	height: auto;
+}
+
+#game .header_text p {
+	height: 30%;
+	box-sizing: border-box;
+	letter-spacing: 0.12rem;
+	padding: 5% 0;
+}
+
+#game .header_text .phrase {
+	font-size: 0.8rem;
+	line-height: 5%;
+}
+
+#game .header_text a {
+	text-decoration: none;
+}
+
+#game .header_text a:hover {
+	text-shadow: 2px 3px 2px grey;
 }
 
 #game .main_body {
@@ -53,7 +84,25 @@
 	height: 100%;
 	vertical-align: top;
 	box-sizing: border-box;
-	font-size: 1.5em;
+	color: lightgrey;
+}
+
+#game .main_body .stats .label {
+	font-size: 0.8rem;
+	letter-spacing: 0.12rem;
+	padding-left: 2rem;
+}
+
+#game .main_body .stats .value {
+	font-style: italic;
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+}
+
+#game .main_body .stats span.value:nth-of-type(2):before {
+	content: ' ';
+	font-size: 1rem;
 }
 
 #game #game-area {
@@ -67,16 +116,16 @@
 }
 
 #game .card {
-	width: 15%;
+	width: 16.66%;
 	height: 33%;
 	border: 1px dashed green;
 	display: inline-block;
 	position: relative;
+	box-sizing: border-box;
 	vertical-align: top;
-	  transform-style: preserve-3d;
-	  transform: rotateY(0deg);
-	  transition-duration: 1s;
-
+  	transform-style: preserve-3d;
+  	transform: rotateY(0deg);
+  	transition-duration: 1s;
 }
 
 #game .card.flipper {
@@ -85,7 +134,7 @@
 
 
 /*hide back of pane during swap*/
-.front, .back {
+#game .front, #game .back {
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
@@ -135,7 +184,6 @@
 	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-
 }
 
 .win_message.hide {
