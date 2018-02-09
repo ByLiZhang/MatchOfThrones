@@ -78,6 +78,7 @@
 
 #game .main_body {
 	height: 80%;
+	width: 100%;
 }
 
 #game .main_body .stats {
@@ -149,7 +150,7 @@
 
 #game .card {
 	width: 16.66%;
-	height: 32%;
+	height: 33.33%;
 	border: 1px dashed green;
 	display: inline-block;
 	position: relative;
@@ -158,6 +159,7 @@
   	transform-style: preserve-3d;
   	transform: rotateY(0deg);  /*set initial card position for rotation*/
   	transition-duration: 1s;
+  	vertical-align: middle;
 }
 
 #game .card.flipper {
@@ -172,15 +174,21 @@
 	left: 0;
 	height: 100%;
 	width: 100%;
+	box-sizing: border-box;
 }
 
-#game .card img{
+#game .card img {
 	width: 100%;
-	/*height: auto;*/
+	height: 150% * width;
 	display: inline-block;
 	position: absolute;
 	box-sizing: border-box;
-	padding: 5%;
+	/*padding: auto 5%;*/
+	margin:  0;
+	/*vertical-align: middle;*/
+	top:50%;
+	/*left:50%*/
+	transform:translateY(-50%);
 }
 
 /*/* front pane, placed above back */
@@ -215,7 +223,8 @@
 	display: inline-block;
 	position: absolute;
 	color: red;
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 	top:50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
