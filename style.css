@@ -4,8 +4,8 @@
 	font-size: 3vmin;
 }
 
-#game body {
-	background-color: lavender;
+#game body, #about body {
+	background-color: black;
 	font-family: GoT;
 	font-size: 0;
 	/*background-image: url();*/
@@ -247,4 +247,44 @@
 
 #game .win_message.hide {
 	display: none;
+}
+
+#about body {
+	color: lightgrey;
+	font-size: 1.5vmin;
+	padding: 3vmin;
+	letter-spacing: 0.12rem;
+	line-height: 1.5rem;
+}
+
+#about .photo {
+	width: 40%;
+	height: 30%
+}
+
+#about .photo img{
+	width: 100%;
+	height: auto;
+}
+
+#about h4 {
+	padding-top: 1rem;
+	font-size: 1rem;
+}
+
+#about li, #about p {
+	font-size: 0.8rem;
+}
+
+#about button {
+	height: 2rem;
+	width: 5rem;
+	font-family: GoT;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+#about footer p {
+	font-size: 0.5rem;
+	text-align: center;
 }
