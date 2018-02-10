@@ -66,7 +66,7 @@ function updateStats(score) {
 		var gameWon = (score/9).toString();
 		$('#game .stats .games-played .value').text(gameWon);
 		updateAttempts(attempt_counter.toString());
-		updateAccuray((((score/attempt_counter).toFixed(2))*100).toString());
+		updateAccuray((((score/attempt_counter).toFixed(2))*100));
 		displayWin();
 	} 
 }
@@ -75,8 +75,8 @@ function updateAttempts(num) {
 	$('#game .stats .attempts .value').text((num).toString());
 }
 
-function updateAccuray(string) {
-	$('#game .stats .accuracy .value').text(string + '%');
+function updateAccuray(num) {
+	$('#game .stats .accuracy .value').text(num + '%');
 }
 
 function reset() {
