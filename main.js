@@ -4,8 +4,14 @@ var first_card_clicked = null;
 var match_counter = 0;
 var attempt_counter = 0;
 var anotherClickAllowed = true;
+var cardArr = ['img/card-1.png', 'img/card-1.png', 'img/card-2.png', 'img/card-2.png',
+			   'img/card-3.png', 'img/card-3.png', 'img/card-4.png', 'img/card-4.png',
+			    'img/card-5.png', 'img/card-5.png', 'img/card-6.png', 'img/card-6.png',
+			     'img/card-7.png', 'img/card-7.png', 'img/card-8.png', 'img/card-8.png',
+			      'img/card-9.png', 'img/card-9.png'];
 
 function initializeApp() {
+	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
 	$('#game .stats .reset').on('click', reset);
@@ -83,4 +89,20 @@ function displayWin() {
 		$('.win_message.hide').removeClass('hide');
 	}, 1050);
 	anotherClickAllowed = false;
+}
+
+function makeCards(cardArr) {
+	var game_area = $('#game-area');
+	for (var i = 0; i < cardArr.length; i++) {
+		var card = $('<div>').addClass('card');
+		var front = $('<div>').addClass('front');
+		var back = $('<div>').addClass('back');
+		var frontImg = $('<img>').addClass('front').attr('src', cardArr[i]);
+		var backImg	= $('<img>').addClass('back').attr('src', 'img/card-back.png');
+		front.append(frontImg);
+		back.append(backImg);
+		card.append(front);
+		card.append(back);
+		game_area.append(card);
+	}
 }
