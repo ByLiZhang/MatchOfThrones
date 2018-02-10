@@ -6,11 +6,12 @@ var attempt_counter = 0;
 var anotherClickAllowed = true;
 var cardArr = ['img/card-1.png', 'img/card-1.png', 'img/card-2.png', 'img/card-2.png',
 			   'img/card-3.png', 'img/card-3.png', 'img/card-4.png', 'img/card-4.png',
-			    'img/card-5.png', 'img/card-5.png', 'img/card-6.png', 'img/card-6.png',
-			     'img/card-7.png', 'img/card-7.png', 'img/card-8.png', 'img/card-8.png',
-			      'img/card-9.png', 'img/card-9.png'];
+			   'img/card-5.png', 'img/card-5.png', 'img/card-6.png', 'img/card-6.png',
+			   'img/card-7.png', 'img/card-7.png', 'img/card-8.png', 'img/card-8.png',
+			   'img/card-9.png', 'img/card-9.png'];
 
 function initializeApp() {
+	shuffle(cardArr);
 	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
@@ -79,15 +80,26 @@ function updateAccuray(string) {
 }
 
 function reset() {
-	$('#game .card').removeClass('flipper');
-	$('.win_message').addClass('hide');
+	$('#game-area').html('<div class="win_message hide"><span></span></div>');
+	initializeApp();
 	anotherClickAllowed = true;
 }
 
 function displayWin() {
 	setTimeout(function(){
 		$('.win_message.hide').removeClass('hide');
-	}, 1050);
+		$('.win_message').css({
+			'background-image':'url(img/Smaug.gif)',
+			'background-repeat': 'no-repeat',
+			'background-size': 'cover'
+		});
+		setTimeout(function(){
+			$('.win_message span').text('You won');
+		}, 3000);
+		setTimeout(function(){
+			$('.win_message').css('background-image', '');
+		}, 2600);
+	}, 1500);
 	anotherClickAllowed = false;
 }
 
@@ -97,12 +109,22 @@ function makeCards(cardArr) {
 		var card = $('<div>').addClass('card');
 		var front = $('<div>').addClass('front');
 		var back = $('<div>').addClass('back');
-		var frontImg = $('<img>').addClass('front').attr('src', cardArr[i]);
-		var backImg	= $('<img>').addClass('back').attr('src', 'img/card-back.png');
+		var frontImg = $('<img>').attr('src', cardArr[i]);
+		var backImg	= $('<img>').attr('src', 'img/card-back.png');
 		front.append(frontImg);
 		back.append(backImg);
 		card.append(front);
 		card.append(back);
 		game_area.append(card);
 	}
+}
+
+function shuffle(cards) {
+	for (var i = 0; i < cards.length; i++) {
+		var randomIndex = Math.floor(Math.random() * (i+1));
+		var buffer = cards[i];
+		cards[i] = cards[randomIndex];
+		cards[randomIndex] = buffer;
+	}
+	return cardArr;
 }
