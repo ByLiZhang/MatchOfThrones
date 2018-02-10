@@ -11,7 +11,7 @@ var cardArr = ['img/card-1.png', 'img/card-1.png', 'img/card-2.png', 'img/card-2
 			   'img/card-9.png', 'img/card-9.png'];
 
 function initializeApp() {
-	shuffle(cardArr);
+	// shuffle(cardArr);
 	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
@@ -66,7 +66,7 @@ function updateStats(score) {
 		var gameWon = (score/9).toString();
 		$('#game .stats .games-played .value').text(gameWon);
 		updateAttempts(attempt_counter.toString());
-		updateAccuray((((score/attempt_counter).toFixed(2))*100));
+		updateAccuray((((score/attempt_counter)*100).toFixed(2)));
 		displayWin();
 	} 
 }
