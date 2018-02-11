@@ -1,19 +1,19 @@
-#game * {
-	padding: 0;
-	margin: 0;
-	font-size: 3vmin;
-}
-
-#game body, #about body {
-	background-color: black;
-	font-family: GoT;
-	font-size: 0;
-	/*background-image: url();*/
-}
 
 @font-face {
 	font-family: GoT;
 	src: url('GameofThrones.ttf');
+}
+
+#game * {
+	padding: 0;
+	margin: 0;
+	font-size: 3vmin;
+	font-family: GoT;
+}
+
+#game body, #about body {
+	background-color: black;
+	font-size: 0;
 }
 
 #game #container {
@@ -251,20 +251,39 @@
 
 #about body {
 	color: lightgrey;
+	font-family: helvetica, sans-serif;
 	font-size: 1.5vmin;
 	padding: 3vmin;
 	letter-spacing: 0.12rem;
 	line-height: 1.5rem;
 }
 
+#about section.container {
+	width: 80vw;
+	height: 90vh;
+	margin: 0 auto;
+}
+
 #about .photo {
-	width: 40%;
-	height: 30%
+	width: 45%;
+	height: 30%;
+	min-width: 500px;
+	min-height: 300px;
 }
 
 #about .photo img{
-	width: 100%;
-	height: auto;
+	/*width: 90%;*/
+	height: 85%;
+}
+
+#about .mainbody{
+	height: 60%;
+	min-height: 700px;
+	min-width: 500px;
+}
+
+#about .portofolio a {
+	color: rgb(66,134,244);
 }
 
 #about h4 {
@@ -285,6 +304,6 @@
 }
 
 #about footer p {
-	font-size: 0.5rem;
+	font-size: 0.7rem;
 	text-align: center;
 }
