@@ -12,6 +12,7 @@ var cardArr = ['img/card-1.png', 'img/card-1.png', 'img/card-2.png', 'img/card-2
 
 function initializeApp() {
 	// shuffle(cardArr);
+	startCutScene();
 	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
@@ -90,11 +91,13 @@ function displayWin() {
 		$('.win_message.hide').removeClass('hide');
 		$('.win_message').css({
 			'background-image':'url(img/Smaug.gif)',
+			'background-position': 'center',
 			'background-repeat': 'no-repeat',
 			'background-size': 'cover'
 		});
 		setTimeout(function(){
 			$('.win_message span').text('You won');
+			$('.win_message span').addClass('animation_fadeIn');
 		}, 3000);
 		setTimeout(function(){
 			$('.win_message').css('background-image', '');
@@ -127,4 +130,17 @@ function shuffle(cards) {
 		cards[randomIndex] = buffer;
 	}
 	return cardArr;
+}
+
+function startCutScene() {
+	$('.win_message').removeClass('hide');
+	$('.win_message').css({
+			'background-image':'url(img/flyover.gif)',
+			'background-repeat': 'no-repeat',
+			'background-size': 'cover',
+			'background-position': 'center'
+		});
+	setTimeout(function(){
+		$('.win_message').addClass('hide');
+		}, 4200);
 }

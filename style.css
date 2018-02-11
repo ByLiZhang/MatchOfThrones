@@ -1,4 +1,3 @@
-
 @font-face {
 	font-family: GoT;
 	src: url('GameofThrones.ttf');
@@ -62,14 +61,16 @@
 	height: 50%;
 	/*box-sizing: border-box;*/
 	letter-spacing: 0.12rem;
-	/*vertical-align: middle;	*/
 	padding-top: 2vh;
 }
 
-#game .header_text .phrase {
+#game .header_text>.title > a {
+	font-size: 1.5rem;
+	color: rgb(140,50,157);
+}
+
+#game .header_text .phrase{
 	font-size: 0.8rem;
-	/*line-height: 5%;*/
-	/*margin-bottom: 3vh;*/
 }
 
 #game .header_text a {
@@ -116,7 +117,6 @@
 }
 
 #game .stats .reset{
-	/*margin-left: 3rem;*/
 	font-family: Got;
 	font-size: 0.8rem;
 	width: 9rem;
@@ -144,11 +144,6 @@
 	top: 50%;
 	transform: translateY(-50%);
 }
-/*#game .main_body .stats span.value:nth-of-type(2)::before {
-	content: '';
-	width: 3rem;
-	display: inline-block;
-}*/
 
 #game #game-area {
 	width: 69%;
@@ -199,11 +194,8 @@
 	display: inline-block;
 	position: absolute;
 	box-sizing: border-box;
-	/*padding: auto 5%;*/
 	margin:  0;
-	/*vertical-align: middle;*/
 	top:50%;
-	/*left:50%*/
 	transform:translateY(-50%);
 }
 
@@ -245,10 +237,27 @@
 	transform: translate(-50%, -50%);
 }
 
+.animation_fadeIn{
+    animation-name: fadeIn;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 #game .win_message.hide {
 	display: none;
 }
 
+/*about page*/
 #about body {
 	color: lightgrey;
 	font-family: helvetica, sans-serif;
@@ -272,7 +281,6 @@
 }
 
 #about .photo img{
-	/*width: 90%;*/
 	height: 85%;
 }
 
