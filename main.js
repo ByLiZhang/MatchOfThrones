@@ -145,6 +145,7 @@ function startCutScene() {
 			'background-size': 'cover',
 			'background-position': 'center'
 		});
+	sounds.wing.play();
 	setTimeout(function(){
 		$('.win_message').addClass('hide');
 		}, 4200);
@@ -152,9 +153,11 @@ function startCutScene() {
 
 var sounds = {
 	roar: new Howl({
-		src: ['sounds/roar.mp3']
+		src: ['sounds/roar.mp3'],
+		volume: 0.4
 	}),
-	// wing: new Howl({
-	// 	src: ['sounds/cheering1.mp3']
-	// })
+	wing: new Howl({
+		src: ['sounds/wingflap.mp3'],
+		volume: 1
+	})
 }
