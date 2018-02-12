@@ -171,6 +171,10 @@
   	vertical-align: middle;
 }
 
+#game .card:hover .back {
+	transform: scale(1.06);
+}
+
 #game .card.flipper {
 	transform: rotateY(180deg);
 }
@@ -190,7 +194,6 @@
 #game .card img {
 	width: 100%;
 	max-width: 130px;
-	height: 150% * width;
 	display: inline-block;
 	position: absolute;
 	box-sizing: border-box;
@@ -239,7 +242,7 @@
 
 .animation_fadeIn{
     animation-name: fadeIn;
-    animation-duration: 5s;
+    animation-duration: 3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }

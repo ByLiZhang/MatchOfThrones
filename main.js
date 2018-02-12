@@ -16,7 +16,7 @@ function initializeApp() {
 }
 
 function setTable() {
-	// shuffle(cardArr);
+	shuffle(cardArr);
 	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
@@ -154,7 +154,7 @@ function startCutScene() {
 var sounds = {
 	roar: new Howl({
 		src: ['sounds/roar.mp3'],
-		volume: 0.4
+		volume: 0.25
 	}),
 	wing: new Howl({
 		src: ['sounds/wingflap.mp3'],
