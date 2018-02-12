@@ -95,6 +95,7 @@ function displayWin() {
 			'background-repeat': 'no-repeat',
 			'background-size': 'cover'
 		});
+		sounds.roar.play();
 		setTimeout(function(){
 			$('.win_message span').text('You won');
 			$('.win_message span').addClass('animation_fadeIn');
@@ -143,4 +144,13 @@ function startCutScene() {
 	setTimeout(function(){
 		$('.win_message').addClass('hide');
 		}, 4200);
+}
+
+var sounds = {
+	roar: new Howl({
+		src: ['sounds/roar.mp3']
+	}),
+	// wing: new Howl({
+	// 	src: ['sounds/cheering1.mp3']
+	// })
 }
