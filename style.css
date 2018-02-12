@@ -78,7 +78,7 @@
 	font-weight: bold;
 }
 
-#game .header_text a:hover {
+#game .header_text a:hover, #about button:hover {
 	text-shadow: 2px 2px 2px grey;
 }
 
