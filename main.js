@@ -11,8 +11,12 @@ var cardArr = ['img/card-1.png', 'img/card-1.png', 'img/card-2.png', 'img/card-2
 			   'img/card-9.png', 'img/card-9.png'];
 
 function initializeApp() {
-	// shuffle(cardArr);
 	startCutScene();
+	setTable();
+}
+
+function setTable() {
+	// shuffle(cardArr);
 	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
@@ -49,7 +53,7 @@ function compareCards(card1, card2) {
 		match_counter++;
 		updateStats(match_counter);
 		anotherClickAllowed = true;
-		first_card_clicked = null;  //no need to check if second_card_clicked = null;
+		first_card_clicked = null;  //no need to check if local variable second_card_clicked = null;
 	} else {
 		setTimeout(function(){
 			showBack(card1);
@@ -80,12 +84,6 @@ function updateAccuray(num) {
 	$('#game .stats .accuracy .value').text(num + '%');
 }
 
-function reset() {
-	$('#game-area').html('<div class="win_message hide"><span></span></div>');
-	initializeApp();
-	anotherClickAllowed = true;
-}
-
 function displayWin() {
 	setTimeout(function(){
 		$('.win_message.hide').removeClass('hide');
@@ -105,6 +103,12 @@ function displayWin() {
 		}, 2600);
 	}, 1500);
 	anotherClickAllowed = false;
+}
+
+function reset() {
+	$('#game-area').html('<div class="win_message hide"><span></span></div>');
+	setTable();
+	anotherClickAllowed = true;
 }
 
 function makeCards(cardArr) {
