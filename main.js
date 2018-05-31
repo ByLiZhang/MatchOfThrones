@@ -16,7 +16,7 @@ function initializeApp() {
 }
 
 function setTable() {
-	shuffle(cardArr);
+	// shuffle(cardArr);
 	makeCards(cardArr);
 	var card = $('#game .card');
 	$(card).on('click', handleClick);
